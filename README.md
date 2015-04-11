@@ -27,7 +27,11 @@ someView.addSubview(gridView)
 
 //-- Simplified initializer (frame, columns, rows and constructor closure)
 
-let gridv
+let gridView = GridView(frame: frame, columns: 3, rows: 3) {
+	column, row, contentView in
+
+	//.. constructor code	
+}
 
 ```
 
