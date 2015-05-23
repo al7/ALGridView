@@ -37,6 +37,7 @@ public class GridView: UIView {
     public var margins: UIEdgeInsets { return self._margins }
     public var columns: UInt { return self._columns }
     public var rows: UInt { return self._rows }
+    public var cellSize: CGSize?
     
     //MARK- Initializers
     
@@ -57,6 +58,7 @@ public class GridView: UIView {
         var cellSize = contentFrame.size
         cellSize.width = (cellSize.width - (padding * CGFloat(columns - 1))) / CGFloat(columns)
         cellSize.height = (cellSize.height - (padding * CGFloat(rows - 1))) / CGFloat(rows)
+        self.cellSize = cellSize
         
         for r in 0..<self.rows {
             for c in 0..<self.columns {
@@ -78,5 +80,18 @@ public class GridView: UIView {
     
     required public init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    //MARK- Helper Methods
+    
+    public func viewAt(#column: UInt, row: UInt) -> UIView? {
+        if column < self.columns && row < self.rows {
+            let subviewIndex = (row * self.columns) + column
+            let subviews = self.subviews as NSArray
+            if let subview = subviews.objectAtIndex(Int(subviewIndex)) as? UIView {
+                return subview
+            }
+        }
+        return nil
     }
 }
