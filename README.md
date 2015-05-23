@@ -34,6 +34,17 @@ let gridView = GridView(frame: frame, columns: 3, rows: 3) {
 }
 
 ```
+### Convenience
+
+If you decide not to use the constructor to build your grid view, you can access any cell very easily by calling the *viewAt(column:row:)* convenience method. Here's how to use it:
+
+```swift
+
+if let targetView = gridView.viewAt(column:2, row: 1) {
+
+	//-- 'targetView' is the content view of the specified cell's (column 2, row 1)}
+
+```
 
 ### Limitations
 
