@@ -78,13 +78,13 @@ public class GridView: UIView {
         self.init(frame: frame, columns: columns, rows: rows, margins: UIEdgeInsetsZero, padding: 0.0, constructor: constructor)
     }
     
-    required public init(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     //MARK- Helper Methods
     
-    public func viewAt(#column: UInt, row: UInt) -> UIView? {
+    public func viewAt(column column: UInt, row: UInt) -> UIView? {
         if column < self.columns && row < self.rows {
             let subviewIndex = (row * self.columns) + column
             let subviews = self.subviews as NSArray

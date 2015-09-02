@@ -37,7 +37,7 @@ class ViewControllerView: UIView {
         gridFrame.size.width = min(self.bounds.size.width, self.bounds.size.height)
         gridFrame.size.height = gridFrame.size.width
         
-        var margins = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        let margins = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         
         /** SAMPLE CODE BELOW **/
         
@@ -54,7 +54,7 @@ class ViewControllerView: UIView {
         self.addSubview(self.gridView!)
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
