@@ -62,7 +62,7 @@ public class GridView: UIView {
         
         for r in 0..<self.rows {
             for c in 0..<self.columns {
-                var contentFrame = CGRect.zeroRect
+                var contentFrame = CGRect.zero
                 contentFrame.origin.x = self.margins.left + (CGFloat(c) * padding) + (CGFloat(c) * cellSize.width)
                 contentFrame.origin.y = self.margins.top + (CGFloat(r) * padding) + (CGFloat(r) * cellSize.height)
                 contentFrame.size = cellSize

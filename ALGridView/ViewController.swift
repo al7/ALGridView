@@ -33,7 +33,7 @@ class ViewControllerView: UIView {
         super.init(frame: UIScreen.mainScreen().bounds)
         self.backgroundColor = UIColor.whiteColor()
         
-        var gridFrame = CGRect.zeroRect
+        var gridFrame = CGRect.zero
         gridFrame.size.width = min(self.bounds.size.width, self.bounds.size.height)
         gridFrame.size.height = gridFrame.size.width
         
