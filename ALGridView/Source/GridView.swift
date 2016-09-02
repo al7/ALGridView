@@ -24,24 +24,24 @@ THE SOFTWARE.
 
 import UIKit
 
-public typealias GridViewConstructor = (column: UInt, row: UInt, contentView: UIView) -> Void
+public typealias GridViewConstructor = (_ column: UInt, _ row: UInt, _ contentView: UIView) -> Void
 
-public class GridView: UIView {
+open class GridView: UIView {
     
-    private var _padding: CGFloat = 0.0
-    private var _margins: UIEdgeInsets = UIEdgeInsetsZero
-    private var _columns: UInt = 0
-    private var _rows: UInt = 0
+    fileprivate var _padding: CGFloat = 0.0
+    fileprivate var _margins: UIEdgeInsets = UIEdgeInsets.zero
+    fileprivate var _columns: UInt = 0
+    fileprivate var _rows: UInt = 0
     
-    public var padding: CGFloat { return self._padding }
-    public var margins: UIEdgeInsets { return self._margins }
-    public var columns: UInt { return self._columns }
-    public var rows: UInt { return self._rows }
-    public var cellSize: CGSize?
+    open var padding: CGFloat { return self._padding }
+    open var margins: UIEdgeInsets { return self._margins }
+    open var columns: UInt { return self._columns }
+    open var rows: UInt { return self._rows }
+    open var cellSize: CGSize?
     
     //MARK- Initializers
     
-    public init(frame: CGRect, columns: UInt, rows: UInt, margins: UIEdgeInsets, padding: CGFloat, constructor: GridViewConstructor!) {
+    public init(frame: CGRect, columns: UInt, rows: UInt, margins: UIEdgeInsets, padding: CGFloat, constructor: GridViewConstructor) {
         super.init(frame: frame)
         
         self._columns = (columns >= 1) ? columns : 1
@@ -68,14 +68,14 @@ public class GridView: UIView {
                 contentFrame.size = cellSize
                 
                 let contentView = UIView(frame: contentFrame)
-                constructor(column: c, row: r, contentView: contentView)
+                constructor(c, r, contentView)
                 self.addSubview(contentView)
             }
         }
     }
     
     convenience init(frame: CGRect, columns: UInt, rows: UInt, constructor: GridViewConstructor!) {
-        self.init(frame: frame, columns: columns, rows: rows, margins: UIEdgeInsetsZero, padding: 0.0, constructor: constructor)
+        self.init(frame: frame, columns: columns, rows: rows, margins: UIEdgeInsets.zero, padding: 0.0, constructor: constructor)
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -84,11 +84,11 @@ public class GridView: UIView {
     
     //MARK- Helper Methods
     
-    public func viewAt(column column: UInt, row: UInt) -> UIView? {
+    open func viewAt(column: UInt, row: UInt) -> UIView? {
         if column < self.columns && row < self.rows {
             let subviewIndex = (row * self.columns) + column
             let subviews = self.subviews as NSArray
-            if let subview = subviews.objectAtIndex(Int(subviewIndex)) as? UIView {
+            if let subview = subviews.object(at: Int(subviewIndex)) as? UIView {
                 return subview
             }
         }

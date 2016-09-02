@@ -12,13 +12,16 @@ class ViewController: UIViewController {
 
     //MARK- View Lifecycle
 
+    /*
     override func loadView() {
         self.view = ViewControllerView()
     }
+    */
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let controllerView = ViewControllerView()
+        self.view.addSubview(controllerView)
     }
 
 }
@@ -30,8 +33,8 @@ class ViewControllerView: UIView {
     //MARK- Initializers
     
     init() {
-        super.init(frame: UIScreen.mainScreen().bounds)
-        self.backgroundColor = UIColor.whiteColor()
+        super.init(frame: UIScreen.main.bounds)
+        self.backgroundColor = UIColor.white
         
         var gridFrame = CGRect.zero
         gridFrame.size.width = min(self.bounds.size.width, self.bounds.size.height)
@@ -45,9 +48,9 @@ class ViewControllerView: UIView {
             column, row, contentView in
             
             let label = UILabel(frame: contentView.bounds)
-            label.textAlignment = .Center
-            label.backgroundColor = UIColor.lightGrayColor()
-            label.textColor = UIColor.darkGrayColor()
+            label.textAlignment = .center
+            label.backgroundColor = UIColor.lightGray
+            label.textColor = UIColor.darkGray
             label.text = "\(column)x\(row)"
             contentView.addSubview(label)
         }

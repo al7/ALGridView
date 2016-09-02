@@ -12,6 +12,8 @@
 		130946DF1AD99BD90017C0D3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 130946DE1AD99BD90017C0D3 /* Images.xcassets */; };
 		130946EE1AD99BDA0017C0D3 /* ALGridViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130946ED1AD99BDA0017C0D3 /* ALGridViewTests.swift */; };
 		130946F91AD99C500017C0D3 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130946F81AD99C500017C0D3 /* GridView.swift */; };
+		137431381D7A082C00F30909 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 137431371D7A082C00F30909 /* Main.storyboard */; };
+		1374313A1D7A097900F30909 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 137431391D7A097900F30909 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,8 @@
 		130946EC1AD99BDA0017C0D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		130946ED1AD99BDA0017C0D3 /* ALGridViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALGridViewTests.swift; sourceTree = "<group>"; };
 		130946F81AD99C500017C0D3 /* GridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
+		137431371D7A082C00F30909 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		137431391D7A097900F30909 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ../LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,8 @@
 				130946D91AD99BD90017C0D3 /* ViewController.swift */,
 				130946DE1AD99BD90017C0D3 /* Images.xcassets */,
 				130946D51AD99BD90017C0D3 /* Supporting Files */,
+				137431371D7A082C00F30909 /* Main.storyboard */,
+				137431391D7A097900F30909 /* LaunchScreen.storyboard */,
 			);
 			path = ALGridView;
 			sourceTree = "<group>";
@@ -163,14 +169,16 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Alexandre Leite";
 				TargetAttributes = {
 					130946D11AD99BD90017C0D3 = {
 						CreatedOnToolsVersion = 6.3;
+						LastSwiftMigration = 0800;
 					};
 					130946E61AD99BDA0017C0D3 = {
 						CreatedOnToolsVersion = 6.3;
+						LastSwiftMigration = 0800;
 						TestTargetID = 130946D11AD99BD90017C0D3;
 					};
 				};
@@ -199,7 +207,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1374313A1D7A097900F30909 /* LaunchScreen.storyboard in Resources */,
 				130946DF1AD99BD90017C0D3 /* Images.xcassets in Resources */,
+				137431381D7A082C00F30909 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,8 +265,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -301,8 +313,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -321,6 +335,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -335,6 +350,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.al7dev.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -347,6 +363,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.al7dev.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -366,6 +383,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.al7dev.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ALGridView.app/ALGridView";
 			};
 			name = Debug;
@@ -382,6 +400,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.al7dev.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ALGridView.app/ALGridView";
 			};
 			name = Release;
